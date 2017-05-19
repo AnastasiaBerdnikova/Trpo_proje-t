@@ -57,3 +57,18 @@ void Testing::HashMap_parse_correct_full()
 	QCOMPARE(list.size(), count);
 }
 
+void Testing::HashMap_parse_correct_empty() // если список пуст
+{
+	QString filename = QApplication::applicationDirPath() + "/empty.txt";
+	QStringList list = wnd->GetListOfWords(filename);
+	QHash <QString, int> hashmap = wnd->parseText(list);
+
+	int count = 0;
+
+	for (int i = 0; i < hashmap.size(); i++)
+	{
+		count += hashmap[hashmap.keys().at(i)];
+	}
+
+	QCOMPARE(list.size(), count);
+}

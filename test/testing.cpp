@@ -92,3 +92,9 @@ void Testing::TableWidget_insertion_correct_empty()
 	wnd->insertHashOnTable(hashmap);
 	QCOMPARE(hashmap.size(), wnd->tabWgt_ptr->rowCount());
 }
+
+void Testing::clean()
+{
+	delete wnd;
+	wnd = nullptr;
+}

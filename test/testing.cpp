@@ -72,3 +72,23 @@ void Testing::HashMap_parse_correct_empty() // если список пуст
 
 	QCOMPARE(list.size(), count);
 }
+
+void Testing::TableWidget_insertion_correct_full()
+{
+	QString filename = QApplication::applicationDirPath() + "/input.txt";
+	QStringList list = wnd->GetListOfWords(filename);
+	QHash <QString, int> hashmap = wnd->parseText(list);
+
+	wnd->insertHashOnTable(hashmap);
+	QCOMPARE(hashmap.size(), wnd->tabWgt_ptr->rowCount());
+}
+
+void Testing::TableWidget_insertion_correct_empty()
+{
+	QString filename = QApplication::applicationDirPath() + "/empty.txt";
+	QStringList list = wnd->GetListOfWords(filename);
+	QHash <QString, int> hashmap = wnd->parseText(list);
+
+	wnd->insertHashOnTable(hashmap);
+	QCOMPARE(hashmap.size(), wnd->tabWgt_ptr->rowCount());
+}

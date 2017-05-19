@@ -33,3 +33,11 @@ void Testing::ParsingTestFull() // тест для проверки работы
 	QCOMPARE(list.size(), list2.size());
 }
 
+void Testing::ParsingTestEmpty() // случай с пустым файлом
+{
+	QString filename = QApplication::applicationDirPath() + "/empty.txt";
+	QStringList list = wnd->GetListOfWords(filename);
+
+	QCOMPARE(0, list.size());
+}
+

@@ -13,5 +13,4 @@ before_install:
 
 install: true
 
-script:
-qmake && make
+script: qmake && make

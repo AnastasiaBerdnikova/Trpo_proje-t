@@ -17,4 +17,4 @@ script:
 - qmake && make
 - cd test
 - qmake && make
-- ./Test
+- source /Test

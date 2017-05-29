@@ -13,8 +13,4 @@ before_install:
 
 install: true
 
-script:
-- qmake && make
-- cd test
-- qmake && make
-- source /Test
+script: qmake && make
